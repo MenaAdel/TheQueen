@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">The Queen</string>
+    <string name="number_hint">رقم الجوال</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="new_client">عميل جديد</string>
+    <string name="name">الاسم</string>
+    <string name="address">العنوان</string>
+    <string name="number">رقم الجوال</string>
+    <string name="home">Home</string>
+    <string name="signature_warning">يجب اﻻمضاء</string>
+    <string name="qot">"</string>
+</resources>

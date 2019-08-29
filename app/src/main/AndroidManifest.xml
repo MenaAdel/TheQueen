@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.thequeen">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/new_app_icon"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/new_app_icon"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".features.home.secondStepActivity.signature.SignatureActivityy"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/WhiteToolBar">
+        </activity>
+
+        <activity
+                android:name=".features.home.secondStepActivity.SecondStepActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/WhiteToolBar"/>
+        <activity
+                android:name=".features.details.DetailsActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/WhiteToolBar"
+                android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+                android:name=".features.home.HomeActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/WhiteToolBar"/>
+        <activity
+                android:name=".features.add_client.AddClientActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/splashScreenTheme"
+                android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+                android:name=".features.choose_partner.ChoosePartnerActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/splashScreenTheme"/>
+        <activity
+                android:name=".features.login.LoginActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/WhiteToolBar"/>
+        <activity
+                android:name=".features.splash.SplashActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/splashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

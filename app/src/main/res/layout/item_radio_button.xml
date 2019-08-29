@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+>
+    <data>
+        <import type="com.example.thequeen.font.QueenFont"/>
+        <variable name="cloth" type="com.example.thequeen.features.home.Cloth"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:padding="18dp">
+
+        <RadioButton
+                android:id="@+id/radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="12dp"
+                style="@style/MyRadioButton"
+                android:text="@{cloth.name}"
+                android:checked="false"
+                android:layout_marginTop="12dp"
+                android:drawablePadding="12dp"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="12dp"
+                app:typeface="@{QueenFont.ARABIC_FONT}"
+        />
+
+        <TextView
+                android:id="@+id/price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                tools:text="bla bla"
+                android:text="@{cloth.price + ` ريال`}"
+                app:layout_constraintTop_toBottomOf="@id/radio_button"
+                app:layout_constraintStart_toStartOf="@id/radio_button"
+                app:layout_constraintEnd_toEndOf="@id/radio_button"
+                app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.example.thequeen.font.QueenFont"/>
+        <import type="android.view.View"/>
+        <variable name="order"
+                  type="com.example.thequeen.features.choose_partner.Orders"/>
+        <variable name="type" type="String"/>
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+        <android.support.constraint.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#80FFFFFF">
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/length_details_layout"
+                    android:layout_width="450dp"
+                    android:layout_height="wrap_content"
+                    android:background="#f1db6b"
+                    android:paddingBottom="60dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/kom_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:visibility="@{type == `kom` ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                            android:id="@+id/circle_hole_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="دوران الحفرة"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.rotation_of_the_pit).equals(`0.0`) ? null : String.valueOf(order.rotation_of_the_pit)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                            android:id="@+id/length_front_hole_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الحفرة اﻻماميه"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.front_pit).equals(`0.0`) ? null : String.valueOf(order.front_pit)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/circle_hole_ed"/>
+
+                    <EditText
+                            android:id="@+id/length_back_hole_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الحفرة الخلفية"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.back_pit).equals(`0.0`) ? null : String.valueOf(order.back_pit)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/length_front_hole_ed"/>
+
+                    <EditText
+                            android:id="@+id/zend_width_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="عرض الزند"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.display_the_Zend).equals(`0.0`) ? null : String.valueOf(order.display_the_Zend)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/length_back_hole_ed"/>
+
+                    <EditText
+                            android:id="@+id/kom_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الكم"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.sleeve_length).equals(`0.0`) ? null : String.valueOf(order.sleeve_length)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/zend_width_ed"/>
+
+                    <EditText
+                            android:id="@+id/mesam_circle_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="دوران المعصم"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:text="@{String.valueOf(order.wrist_rotation).equals(`0.0`) ? null : String.valueOf(order.wrist_rotation)}"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/kom_length_ed"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/back_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:visibility="@{type == `back` ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                            android:id="@+id/back_width_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="عرض الظهر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:text="@{String.valueOf(order.display_back).equals(`0.0`) ? null : String.valueOf(order.display_back)}"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                            android:id="@+id/back_height_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الظهر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.length_of_the_back).equals(`0.0`) ? null : String.valueOf(order.length_of_the_back)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/back_width_ed"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/werk_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{type == `werk` ? View.VISIBLE : View.GONE}"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                            android:id="@+id/circle_werk_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="دوران الورك"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:text="@{String.valueOf(order.back_rotation).equals(`0.0`) ? null : String.valueOf(order.back_rotation)}"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                            android:id="@+id/werk_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الورك"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.size_of_back).equals(`0.0`) ? null : String.valueOf(order.size_of_back)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/circle_werk_ed"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/length_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{type == `length` ? View.VISIBLE : View.GONE}"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                            android:id="@+id/all_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="الطول الكلي"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.total_length).equals(`0.0`) ? null : String.valueOf(order.total_length)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                            android:id="@+id/tanora_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول التنورة"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:text="@{String.valueOf(order.skirt_lenth).equals(`0.0`) ? null : String.valueOf(order.skirt_lenth)}"
+                            android:gravity="right"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/all_length_ed"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                        android:id="@+id/sedr_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{type == `sedr` ? View.VISIBLE : View.GONE}"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                    <EditText
+                            android:id="@+id/shoulder_width_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="عرض الكتف"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:text="@{String.valueOf(order.shoulder_width).equals(`0.0`) ? null : String.valueOf(order.shoulder_width)}"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                            android:id="@+id/sedr_height_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الصدر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.size_of_Chest).equals(`0.0`) ? null : String.valueOf(order.size_of_Chest)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/shoulder_width_ed"/>
+
+                    <EditText
+                            android:id="@+id/sedr_circle_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="دوران الصدر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.chest_rotation).equals(`0.0`) ? null : String.valueOf(order.chest_rotation)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/sedr_height_ed"/>
+
+                    <EditText
+                            android:id="@+id/khesr_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول الخصر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.size_of_waist).equals(`0.0`) ? null : String.valueOf(order.size_of_waist)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/sedr_circle_ed"/>
+
+                    <EditText
+                            android:id="@+id/khesr_circle_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="دوران الخصر"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.wrist_rotation).equals(`0.0`) ? null : String.valueOf(order.wrist_rotation)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/khesr_length_ed"/>
+
+                    <EditText
+                            android:id="@+id/front_width_sedr_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="عرض فوق الصدر الامامي"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.display_above_the_front_chest).equals(`0.0`) ? null : String.valueOf(order.display_above_the_front_chest)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/khesr_circle_ed"/>
+
+                    <EditText
+                            android:id="@+id/back_width_sedr_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="عرض فوق الصدر الخلفي"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.display_over_the_bac_chest).equals(`0.0`) ? null : String.valueOf(order.display_over_the_bac_chest)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/front_width_sedr_ed"/>
+
+                    <EditText
+                            android:id="@+id/between_nahden_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="بين النهدين"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.between_nahdeen).equals(`0.0`) ? null : String.valueOf(order.between_nahdeen)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/back_width_sedr_ed"/>
+
+                    <EditText
+                            android:id="@+id/benas_length_ed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="طول البنس"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:padding="8dp"
+                            android:gravity="right"
+                            android:text="@{String.valueOf(order.length_of_the_penis).equals(`0.0`) ? null : String.valueOf(order.length_of_the_penis)}"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginTop="40dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edit_add_bg"
+                            app:typeface="@{QueenFont.ARABIC_FONT}"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/between_nahden_ed"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                    android:id="@+id/header_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مقاسات الكم"
+                    android:textColor="@color/white"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/round_black_bg"
+                    android:textSize="22sp"
+                    app:layout_constraintTop_toTopOf="@id/length_details_layout"
+                    app:layout_constraintBottom_toTopOf="@id/length_details_layout"
+                    app:layout_constraintStart_toEndOf="@id/length_details_layout"
+                    app:layout_constraintEnd_toStartOf="@id/length_details_layout"
+                    app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/done_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/correct"
+                    app:layout_constraintTop_toBottomOf="@id/length_details_layout"
+                    app:layout_constraintBottom_toBottomOf="@id/length_details_layout"
+                    app:layout_constraintStart_toEndOf="@id/length_details_layout"
+                    app:layout_constraintEnd_toStartOf="@id/length_details_layout"
+                    tools:layout_editor_absoluteY="530dp"
+                    tools:layout_editor_absoluteX="331dp"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

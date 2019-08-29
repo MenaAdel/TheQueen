@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.example.thequeen.font.QueenFont"/>
+        <variable name="customer" type="com.example.thequeen.features.choose_partner.Client"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/item_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="24sp"
+                android:text="@{customer.name}"
+                android:background="#F1DB6B"
+                app:typeface="@{QueenFont.ARABIC_FONT}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="بلا بلا"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

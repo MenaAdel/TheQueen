@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.example.thequeen.font.QueenFont"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".features.home.secondStepActivity.signature.SignatureActivity">
+
+        <com.kyanogen.signatureview.SignatureView
+                xmlns:sign="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/signature_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                sign:penSize="5dp"
+                sign:backgroundColor="#ffffff"
+                sign:penColor="#000000"
+                sign:enableSignature="true"
+                sign:layout_constraintTop_toTopOf="parent"
+                sign:layout_constraintStart_toStartOf="parent"
+                sign:layout_constraintEnd_toEndOf="parent"
+                sign:layout_constraintBottom_toTopOf="@id/confirm_btn"/>
+
+        <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="383dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="حفظ"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/edit_text_green_gb"
+                app:typeface="@{QueenFont.ARABIC_FONT}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

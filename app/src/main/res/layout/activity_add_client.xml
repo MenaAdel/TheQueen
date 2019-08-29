@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.thequeen.font.QueenFont"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".features.add_client.AddClientActivity"
+    >
+
+        <TextView
+                android:id="@+id/new_client_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/new_client"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+        <LinearLayout
+                android:id="@+id/contacts_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#f6ce77"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="48dp"
+                app:layout_constraintTop_toBottomOf="@id/new_client_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                    android:id="@+id/name_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="60dp"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    android:background="@drawable/edit_add_bg"
+                    android:textSize="20sp"
+                    android:hint="@string/name"
+                    app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+            <EditText
+                    android:id="@+id/address_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    android:background="@drawable/edit_add_bg"
+                    android:textSize="20sp"
+                    android:hint="@string/address"
+                    app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+            <EditText
+                    android:id="@+id/number_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="48dp"
+                    android:padding="12dp"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:background="@drawable/edit_add_bg"
+                    android:textSize="20sp"
+                    android:hint="@string/number"
+                    app:typeface="@{QueenFont.ARABIC_FONT}"/>
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/add_client_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/plus"
+                app:layout_constraintTop_toTopOf="@+id/contacts_layout"
+                app:layout_constraintBottom_toTopOf="@id/contacts_layout"
+                app:layout_constraintStart_toEndOf="@id/contacts_layout"
+                app:layout_constraintEnd_toStartOf="@id/contacts_layout"/>
+
+        <ProgressBar
+                android:id="@+id/loading_pb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
